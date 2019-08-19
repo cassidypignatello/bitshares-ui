@@ -70,7 +70,8 @@ let icons = [
     "wallet",
     "prediction",
     "prediction-large",
-    "wifi"
+    "wifi",
+    "wifi-red"
 ];
 
 let iconsMap = {};

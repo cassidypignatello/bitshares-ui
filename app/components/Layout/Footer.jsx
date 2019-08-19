@@ -628,12 +628,14 @@ class Footer extends React.Component {
                                             {!connected ? (
                                                 <span className="warning">
                                                     <Icon
-                                                        name="wifi"
-                                                        title="icons.wifi"
+                                                        name="wifi-red"
+                                                        title="icons.wifi-red"
+                                                        size="3x"
                                                         className="warning"
                                                         style={{
-                                                            fill:
-                                                                "rgb(248, 45, 79)"
+                                                            position:
+                                                                "relative",
+                                                            top: "-12px"
                                                         }}
                                                     />
                                                 </span>
@@ -641,8 +643,8 @@ class Footer extends React.Component {
                                                 <span className="success">
                                                     <Icon
                                                         name="wifi"
-                                                        title="icons.wifi"
                                                         className="success"
+                                                        title="icons.wifi"
                                                         style={{
                                                             fill:
                                                                 "rgb(179, 255, 76)"
