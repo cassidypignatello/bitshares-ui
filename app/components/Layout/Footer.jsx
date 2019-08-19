@@ -428,7 +428,7 @@ class Footer extends React.Component {
                 >
                     <div>
                         <p>
-                            Please choose another node at:
+                            &nbsp;Please choose another node at:
                             <a
                                 href="https://wallet.bitshares.org/#/settings/access"
                                 target="_blank"
