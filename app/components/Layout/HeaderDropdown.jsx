@@ -187,97 +187,6 @@ export default class DropDownMenu extends React.Component {
                     </div>
                 </li>
 
-                {[
-                    {
-                        icon: {
-                            name: "transfer",
-                            title: "icons.transfer"
-                        },
-                        disabled: !showAccountLinks,
-                        mainText: "header.payments",
-                        mainCallback: this.props.showSend,
-                        subText: null,
-                        subURL: null
-                    },
-                    {
-                        icon: {
-                            name: "deposit",
-                            title: "icons.deposit.deposit"
-                        },
-                        disabled: !enableDepositWithdraw,
-                        mainText: "modal.deposit.submit",
-                        mainCallback: this.props.showDeposit,
-                        subText: "header.deposit_legacy",
-                        subURL: "/deposit-withdraw"
-                    },
-                    {
-                        icon: {
-                            name: "withdraw",
-                            title: "icons.withdraw"
-                        },
-                        disabled: !enableDepositWithdraw,
-                        mainText: "modal.withdraw.submit",
-                        mainCallback: this.props.showWithdraw,
-                        subText: "header.withdraw_legacy",
-                        subURL: "/deposit-withdraw"
-                    }
-                ].map(
-                    (
-                        {
-                            icon,
-                            subURL,
-                            disabled,
-                            mainText,
-                            subText,
-                            mainCallback
-                        },
-                        index
-                    ) => (
-                        <li
-                            key={index}
-                            className={cnames({
-                                active: active.indexOf(subURL) !== -1,
-                                disabled
-                            })}
-                            onClick={
-                                disabled
-                                    ? event => {
-                                          event.stopPropagation();
-                                      }
-                                    : mainCallback
-                            }
-                        >
-                            <div className="table-cell">
-                                <Icon size="2x" {...icon} />
-                            </div>
-                            <div className="table-cell">
-                                <Translate content={mainText} />{" "}
-                                {subText && (
-                                    <span
-                                        onClick={
-                                            disabled
-                                                ? () => {}
-                                                : event => {
-                                                      event.stopPropagation();
-                                                      this.props.onNavigate.bind(
-                                                          this,
-                                                          subURL
-                                                      )(event);
-                                                  }
-                                        }
-                                        className={cnames(
-                                            "header-dropdown-sub-link",
-                                            {enabled: !disabled}
-                                        )}
-                                    >
-                                        <Translate content={subText} />
-                                    </span>
-                                )}
-                            </div>
-                        </li>
-                    )
-                )}
-
                 <li
                     className={cnames(
                         {
@@ -293,27 +202,6 @@ export default class DropDownMenu extends React.Component {
                     </div>
                     <div className="table-cell">
                         <Translate content="header.settings" />
-                    </div>
-                </li>
-
-                <li
-                    className={cnames(
-                        {
-                            active: active.indexOf("/spotlight") !== -1
-                        },
-                        "divider"
-                    )}
-                    onClick={this.props.onNavigate.bind(this, "/spotlight")}
-                >
-                    <div className="table-cell">
-                        <Icon
-                            size="2x"
-                            name="showcases"
-                            title="icons.showcases"
-                        />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="header.showcases" />
                     </div>
                 </li>
 
@@ -338,42 +226,6 @@ export default class DropDownMenu extends React.Component {
 
                 <li
                     className={cnames({
-                        active: active.indexOf("/news") !== -1
-                    })}
-                    onClick={this.props.onNavigate.bind(this, "/news")}
-                >
-                    <div className="table-cell">
-                        <Icon size="2x" name="news" title="icons.news" />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="news.news" />
-                    </div>
-                </li>
-
-                <li
-                    className={cnames({
-                        active: active.indexOf("/voting") !== -1,
-                        disabled: !showAccountLinks
-                    })}
-                    onClick={this.props.onNavigate.bind(
-                        this,
-                        `/account/${currentAccount}/voting`
-                    )}
-                >
-                    <div className="table-cell">
-                        <Icon
-                            size="2x"
-                            name="thumbs-up"
-                            title="icons.thumbs_up"
-                        />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="account.voting" />
-                    </div>
-                </li>
-
-                <li
-                    className={cnames({
                         active:
                             active.indexOf("/assets") !== -1 &&
                             active.indexOf("/account/") !== -1,
@@ -389,50 +241,6 @@ export default class DropDownMenu extends React.Component {
                     </div>
                     <div className="table-cell">
                         <Translate content="explorer.assets.title" />
-                    </div>
-                </li>
-
-                <li
-                    className={cnames({
-                        active: active.indexOf("/signedmessages") !== -1,
-                        disabled: !showAccountLinks
-                    })}
-                    onClick={this.props.onNavigate.bind(
-                        this,
-                        `/account/${currentAccount}/signedmessages`
-                    )}
-                >
-                    <div className="table-cell">
-                        <Icon
-                            size="2x"
-                            name="text"
-                            title="icons.text.signed_messages"
-                        />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="account.signedmessages.menuitem" />
-                    </div>
-                </li>
-
-                <li
-                    className={cnames({
-                        active: active.indexOf("/member-stats") !== -1,
-                        disabled: !showAccountLinks
-                    })}
-                    onClick={this.props.onNavigate.bind(
-                        this,
-                        `/account/${currentAccount}/member-stats`
-                    )}
-                >
-                    <div className="table-cell">
-                        <Icon
-                            size="2x"
-                            name="text"
-                            title="icons.text.membership_stats"
-                        />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="account.member.stats" />
                     </div>
                 </li>
 
@@ -458,24 +266,6 @@ export default class DropDownMenu extends React.Component {
                         </div>
                     </li>
                 ) : null}
-
-                <li
-                    className={cnames({
-                        active: active.indexOf("/whitelist") !== -1,
-                        disabled: !showAccountLinks
-                    })}
-                    onClick={this.props.onNavigate.bind(
-                        this,
-                        `/account/${currentAccount}/whitelist`
-                    )}
-                >
-                    <div className="table-cell">
-                        <Icon size="2x" name="list" title="icons.list" />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="account.whitelist.title" />
-                    </div>
-                </li>
 
                 <li
                     className={cnames("divider", {
