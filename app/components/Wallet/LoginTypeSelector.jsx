@@ -1,18 +1,16 @@
 import React from "react";
 import AltContainer from "alt-container";
 import counterpart from "counterpart";
-import {Form, Select} from "bitshares-ui-style-guide";
+import {Form} from "bitshares-ui-style-guide";
 import WalletUnlockStore from "stores/WalletUnlockStore";
 import SettingsActions from "actions/SettingsActions";
 
 const LoginTypeSelectorView = ({value, onChange}) => (
-    <Form.Item label={counterpart.translate("account.login_with")}>
-        <Select onChange={onChange} value={value}>
-            <Select.Option value="cloud">
-                {counterpart.translate("account.name")}(
-                {counterpart.translate("wallet.password_model").toLowerCase()})
-            </Select.Option>
-        </Select>
+    <Form.Item>
+        {counterpart.translate("account.login_with")}
+        &nbsp;
+        {counterpart.translate("account.name")}(
+        {counterpart.translate("wallet.password_model").toLowerCase()})
     </Form.Item>
 );
 
