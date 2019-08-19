@@ -12,10 +12,6 @@ const LoginTypeSelectorView = ({value, onChange}) => (
                 {counterpart.translate("account.name")}(
                 {counterpart.translate("wallet.password_model").toLowerCase()})
             </Select.Option>
-            <Select.Option value="local">
-                {counterpart.translate("wallet.key_file")} (
-                {counterpart.translate("wallet.wallet_model").toLowerCase()})
-            </Select.Option>
         </Select>
     </Form.Item>
 );

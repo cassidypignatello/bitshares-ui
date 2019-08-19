@@ -427,12 +427,15 @@ class Footer extends React.Component {
                     ]}
                 >
                     <div>
-                        <Translate
-                            content="connection.out_of_sync"
-                            out_of_sync_seconds={parseInt(
-                                this.getBlockTimeDelta()
-                            )}
-                        />
+                        <p>
+                            Please choose another node at:
+                            <a
+                                href="https://wallet.bitshares.org/#/settings/access"
+                                target="_blank"
+                            >
+                                https://wallet.bitshares.org/#/settings/access
+                            </a>
+                        </p>
                         <br />
                         <br />
                         <Translate content="connection.want_to_reconnect" />
@@ -501,7 +504,7 @@ class Footer extends React.Component {
                                         </a>
                                     ) : (
                                         <span className="version">
-                                            {version}
+                                            &nbsp;Cassidy 0.1 alpha
                                         </span>
                                     )}
                                 </span>
@@ -624,11 +627,27 @@ class Footer extends React.Component {
                                                 )}
                                             {!connected ? (
                                                 <span className="warning">
-                                                    <Translate content="footer.disconnected" />
+                                                    <Icon
+                                                        name="wifi"
+                                                        title="icons.wifi"
+                                                        className="warning"
+                                                        style={{
+                                                            fill:
+                                                                "rgb(248, 45, 79)"
+                                                        }}
+                                                    />
                                                 </span>
                                             ) : (
                                                 <span className="success">
-                                                    {activeNode.name}
+                                                    <Icon
+                                                        name="wifi"
+                                                        title="icons.wifi"
+                                                        className="success"
+                                                        style={{
+                                                            fill:
+                                                                "rgb(179, 255, 76)"
+                                                        }}
+                                                    />
                                                 </span>
                                             )}
                                         </div>
