@@ -420,8 +420,13 @@ class Header extends React.Component {
                             active.indexOf("account") === -1)
                 })}
                 onClick={this._onNavigate.bind(this, "/")}
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    fontSize: "28px"
+                }}
             >
-                <img style={{margin: 0, height: 40}} src={logo} />
+                {logo}
             </a>
         );
 

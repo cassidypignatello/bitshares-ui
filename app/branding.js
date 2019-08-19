@@ -53,7 +53,7 @@ export function getFaucet() {
  * @returns {*}
  */
 export function getLogo() {
-    return require("assets/logo-ico-blue.png");
+    return "DEMO";
 }
 
 /**
