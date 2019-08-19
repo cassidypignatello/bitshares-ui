@@ -383,13 +383,6 @@ class Asset extends React.Component {
                     hide_issuer="true"
                 />
                 {short_name ? <p>{short_name}</p> : null}
-
-                <Link
-                    className="button market-button"
-                    to={`/market/${asset.symbol}_${preferredMarket}`}
-                >
-                    <Translate content="exchange.market" />
-                </Link>
             </div>
         );
     }
