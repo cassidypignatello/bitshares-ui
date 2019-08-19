@@ -489,10 +489,6 @@ class Footer extends React.Component {
                                     />
                                 )}
                                 <span style={updateStyles}>
-                                    <Translate
-                                        content="footer.title"
-                                        wallet_name={getWalletName()}
-                                    />
                                     {__GIT_BRANCH__ === "staging" ? (
                                         <a
                                             href={`https://github.com/bitshares/bitshares-ui/commit/${version.trim()}`}
