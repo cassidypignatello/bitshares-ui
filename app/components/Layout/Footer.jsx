@@ -428,7 +428,7 @@ class Footer extends React.Component {
                 >
                     <div>
                         <p>
-                            &nbsp;Please choose another node at:
+                            Please choose another node at:&nbsp;
                             <a
                                 href="https://wallet.bitshares.org/#/settings/access"
                                 target="_blank"
@@ -635,7 +635,8 @@ class Footer extends React.Component {
                                                         style={{
                                                             position:
                                                                 "relative",
-                                                            top: "-12px"
+                                                            top: "-14px",
+                                                            left: "18px"
                                                         }}
                                                     />
                                                 </span>
